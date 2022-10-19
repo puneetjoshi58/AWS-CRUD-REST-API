@@ -6,7 +6,7 @@ This application enables the user to perform CRUD operations on a DynamoDB using
 Trial
 ## Workings
 
-a CDK app with an instance of a stack (`awsdeploy_stack`) is created which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
+a CDK app with an instance of a stack (`AwsCrudRestApiStack`) is created which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
 
 
 The stack instance contains the following
@@ -28,7 +28,7 @@ The stack instance contains the following
 
 ==> The CustomEncoder is designed to check if an instanced passed to it is a decimal(Since values retured ny the DynamoDB are of Decimal Form) and convert it into float
 
-==>The `cdk.json` file tells the CDK Toolkit which talks with AWS CloudFormation to execute the app.
+==>The `cdk.json` file tells the CDK Toolkit what files are to be executed and the permissions required to do so this information is then passed onto AWS CloudFormation to execute the app.
 
 ==>This cdk.json file is updated everytime the (`cdk synth`) command is used to emit the synthesized CloudFormation template
 
@@ -66,6 +66,11 @@ Once the virtualenv is activated, you can install the required dependencies.
 ```
 $ pip install -r requirements.txt
 ```
+To Create a basic framework like the one this is based on use command 
+
+```
+$ cdk init sample app -language python
+```
 
 At this point you can now synthesize the CloudFormation template for this code.
 
@@ -77,6 +82,8 @@ To add additional dependencies, for example other CDK libraries, just add to
 your requirements.txt file and rerun the `pip install -r requirements.txt`
 command.
 
+
+
 ## Useful commands
 
  * `cdk ls`          list all stacks in the app
@@ -84,5 +91,12 @@ command.
  * `cdk deploy`      deploy this stack to your default AWS account/region
  * `cdk diff`        compare deployed stack with current state
  * `cdk docs`        open CDK documentation
+
+## Tips
+
+==> Remeber to save files after changes 
+
+
+==> Remeber to perform `cdk synth` on saved changes before deploying
 
 Enjoy!

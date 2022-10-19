@@ -66,6 +66,11 @@ Once the virtualenv is activated, you can install the required dependencies.
 ```
 $ pip install -r requirements.txt
 ```
+To Create a basic framework like the one this is based on use command 
+
+```
+$ cdk init sample app -language python
+```
 
 At this point you can now synthesize the CloudFormation template for this code.
 
@@ -77,6 +82,8 @@ To add additional dependencies, for example other CDK libraries, just add to
 your requirements.txt file and rerun the `pip install -r requirements.txt`
 command.
 
+
+
 ## Useful commands
 
  * `cdk ls`          list all stacks in the app
@@ -84,5 +91,10 @@ command.
  * `cdk deploy`      deploy this stack to your default AWS account/region
  * `cdk diff`        compare deployed stack with current state
  * `cdk docs`        open CDK documentation
+
+## Tips
+
+==> Remeber to save files after changes 
+==> Remeber to perform `cdk synth` on saved changes before deploying
 
 Enjoy!

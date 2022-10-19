@@ -95,6 +95,8 @@ command.
 ## Tips
 
 ==> Remeber to save files after changes 
+
+
 ==> Remeber to perform `cdk synth` on saved changes before deploying
 
 Enjoy!
